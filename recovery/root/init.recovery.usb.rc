@@ -83,6 +83,7 @@ on boot
     mount functionfs fastboot /dev/usb-ffs/fastboot rmode=0770,fmode=0660,uid=1000,gid=1000
     write /sys/class/android_usb/android0/f_ffs/aliases adb,fastboot
     setprop vendor.usb.controller ${sys.usb.controller}
+    setprop sys.usb.configfs 1
 
 on property:sys.usb.config=none
     write /config/usb_gadget/g1/UDC "none"
